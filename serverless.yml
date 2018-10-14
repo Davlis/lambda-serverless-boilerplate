@@ -1,0 +1,15 @@
+service: lambda-notify
+provider:
+  name: aws
+  runtime: nodejs8.10
+  region: us-east-1
+plugins:
+  - serverless-offline
+functions:
+    notify:
+      handler: src/handler.notify
+      events:
+        - http:
+            path: notify
+            method: post
+            cors: true

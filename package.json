@@ -1,0 +1,30 @@
+{
+  "name": "lambda-serverless-boilerplate",
+  "version": "1.0.0",
+  "description": "Boilerplate for AWS lambdas",
+  "author": "Dawid Liszka <dawid.liszka@netguru.pl>",
+  "license": "ISC",
+  "keywords": ["serverless", "FaaS", "Lambda", "AWS", "boilerplate"],
+  "main": "handler.js",
+  "scripts": {
+    "start:local": "export $(cat .env | xargs); sls offline",
+    "test:local": "export $(cat .env.test | xargs); nyc mocha test --recursive --exit",
+    "coverage": "nyc report --reporter=lcov"
+  },
+  "dependencies": {
+    "nexmo": "^2.4.0",
+    "winston": "^3.1.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "eslint": "^5.7.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-chai-friendly": "^0.4.1",
+    "eslint-plugin-import": "^2.14.0",
+    "faker": "^4.1.0",
+    "mocha": "^5.2.0",
+    "nyc": "^13.1.0",
+    "serverless-offline": "^3.25.14"
+  }
+}
